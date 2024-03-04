@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pascal HTMX App</title>
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <!-- call htmx lib -->
+  <script src="js/htmx.min.js"></script>
+</head>
+
+<body>
+  <h1>Pascal + HTMX</h1>
+  <div id="app-main">
+    <button class="btn" hx-get="/api" hx-swap="outerHTML">
+      Click me to call the Server API!
+    </button>
+  </div>
+  <p class="btn" style="font-weight: bold;">Note that the page is not reloaded<br />and HTMX will do the work of JS for
+    you.</p>
+
+   <div hx-get="/ctrl" hx-trigger="click[ctrlKey]">
+   Control click me
+   </div>
+
+   <div hx-get="/mouse" hx-trigger="mouseenter once" hx-swap="outerHTML">
+   [Here mouse, Mouse!]
+   </div>
+
+</body>
+
+</html>
